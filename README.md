@@ -70,11 +70,11 @@ export default function App() {
 
 ## Lisensi
 
-MIT © 2025 [@wadahkode](https://github.com/wadahkode)
+MIT © 2025 [@aidomx](https://github.com/aidomx)
 
 ---
 
-Aidomx dibuat dan dikembangkan oleh [@wadahkode](https://github.com/wadahkode)
+Aidomx dibuat dan dikembangkan oleh [@aidomx](https://github.com/aidomx)
 
 > "DOM bisa fleksibel dan reaktif tanpa perlu kompleks. Aidomx menghadirkan itu."
 
