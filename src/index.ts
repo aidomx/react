@@ -1,5 +1,4 @@
 export { AidomxProvider } from './AidomxProvider'
 export { AidomxContext } from './AidomxContext'
 export { Aidomx } from './Aidomx'
-export { withRootElement } from './withRootElement'
-export { withoutRootElement } from './withoutRootElement'
+export { useAidomx } from './AidomxProvider'
