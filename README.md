@@ -4,18 +4,18 @@
 
 **Aidomx React** adalah integrasi React dari library [aidomx](https://github.com/wadahkode/aidomx) — sebuah alat ringan untuk manipulasi DOM yang berfokus pada performa, fleksibilitas, dan kesederhanaan.
 
-Aidomx React memberikan API yang intuitif dan reaktif untuk menghubungkan komponen React dengan behavior DOM secara dinamis, tanpa mengorbankan kontrol penuh terhadap elemen HTML.            
+Aidomx React memberikan API yang intuitif dan reaktif untuk menghubungkan komponen React dengan behavior DOM secara dinamis, tanpa mengorbankan kontrol penuh terhadap elemen HTML.
 
 ## Fitur Utama
 
-- Integrasi seamless antara React dan DOM melalui aidomx  
-- Minimalis dan ringan  
+- Integrasi seamless antara React dan DOM melalui aidomx
+- Minimalis dan ringan
 - Cocok untuk framework seperti Next.js, Vite, atau CRA
 
 ## Instalasi
 
 ```bash
-npm install aidomx aidomx-react
+npm install @aidomx/react
 ```
 
 ## Penggunaan
@@ -23,9 +23,9 @@ npm install aidomx aidomx-react
 Contoh penggunaan dasar:
 
 ```tsx
-import { AidomxProvider, defineRules } from 'aidomx-react'
+import { AidomxProvider } from '@aidomx/react'
 
-const rules = defineRules({
+const rules = {
   // Root element hanya digunakan untuk identitas
   root: 'container',
   // Components dalam bentuk object[]
@@ -48,7 +48,7 @@ const rules = defineRules({
   ],
   // Semua dukungan pada components bisa digunakan diroot.
   className: 'bg-gray-100',
-})
+}
 
 export default function App() {
   return (
@@ -77,5 +77,3 @@ MIT © 2025 [@aidomx](https://github.com/aidomx)
 Aidomx dibuat dan dikembangkan oleh [@aidomx](https://github.com/aidomx)
 
 > "DOM bisa fleksibel dan reaktif tanpa perlu kompleks. Aidomx menghadirkan itu."
-
-
