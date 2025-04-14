@@ -2,7 +2,7 @@
 
 **Lightweight, reactive, and DOM-first React integration**
 
-**Aidomx React** adalah integrasi React dari library [aidomx](https://github.com/wadahkode/aidomx) — sebuah alat ringan untuk manipulasi DOM yang berfokus pada performa, fleksibilitas, dan kesederhanaan.
+**Aidomx React** adalah integrasi React dari library [aidomx](https://github.com/aidomx/aidomx) — sebuah alat ringan untuk manipulasi DOM yang berfokus pada performa, fleksibilitas, dan kesederhanaan.
 
 Aidomx React memberikan API yang intuitif dan reaktif untuk menghubungkan komponen React dengan behavior DOM secara dinamis, tanpa mengorbankan kontrol penuh terhadap elemen HTML.
 
@@ -70,7 +70,7 @@ export default function App() {
 
 ## Lisensi
 
-MIT © 2025 [@aidomx](https://github.com/aidomx)
+MIT © 2025 [@aidomx](https://github.com/aidomx/react/LICENSE)
 
 ---
 
