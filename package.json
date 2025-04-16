@@ -25,6 +25,10 @@
     "type": "git",
     "url": "git+https://github.com/aidomx/react.git"
   },
+  "keywords": [
+    "react",
+    "dom"
+  ],
   "scripts": {
     "dev": "tsup src/index.ts --watch",
     "build": "tsup",
