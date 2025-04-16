@@ -1,8 +1,8 @@
 # Aidomx React
 
-![npm version](https://img.shields.io/npm/v/@aidomx/react?label=%40aidomx%2Freact)
-![license](https://img.shields.io/npm/l/@aidomx/react)
-![Build status](https://github.com/aidomx/react/actions/workflows/build.yml/badge.svg)
+[![npm version](https://www.npmjs.com/package/@aidomx/react)
+![license](https://img.shields.io/npm/l/@aidomx/react?cacheSeconds=60)
+![Build status](https://github.com/aidomx/react/actions/workflows/ci.yml/badge.svg)](#)
 
 **Lightweight, reactive, and DOM-first React integration**
 
