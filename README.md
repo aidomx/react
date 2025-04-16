@@ -1,5 +1,9 @@
 # Aidomx React
 
+![npm version](https://img.shields.io/npm/v/@aidomx/react?label=%40aidomx%2Freact)
+![license](https://img.shields.io/npm/l/@aidomx/react)
+![Build status](https://github.com/aidomx/react/actions/workflows/build.yml/badge.svg)
+
 **Lightweight, reactive, and DOM-first React integration**
 
 **Aidomx React** adalah integrasi React dari library [aidomx](https://github.com/aidomx/aidomx) — sebuah alat ringan untuk manipulasi DOM yang berfokus pada performa, fleksibilitas, dan kesederhanaan.
