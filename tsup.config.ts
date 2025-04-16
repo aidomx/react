@@ -10,5 +10,5 @@ export default defineConfig({
   sourcemap: true,
   minify: true,
   shims: true,
-  external: ['react', 'react-dom', 'aidomx'],
+  external: ['react', 'react-dom'],
 })
