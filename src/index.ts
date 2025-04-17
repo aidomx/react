@@ -1,4 +1,8 @@
+export type * from './types'
 export { AidomxProvider } from './AidomxProvider'
 export { AidomxContext } from './AidomxContext'
 export { Aidomx } from './Aidomx'
 export { useAidomx } from './AidomxProvider'
+export { Box, Button, Text } from './components'
+export { ApplyRules } from './utils/ApplyRules'
+export { ApplyComponentRules } from './utils/ApplyComponentRules'

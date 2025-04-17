@@ -10,7 +10,12 @@
     "esModuleInterop": true,
     "declaration": true,
     "declarationDir": "dist",
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "paths": {
+      "@/*": ["./*"],
+      "@/s/*": ["./src/*"],
+      "@/components/*": ["./src/components/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules"]

@@ -1,8 +1,6 @@
 'use client'
 
 import { createContext } from 'react'
-import type { Rules } from 'aidomx'
+import type { Rules } from './types'
 
-type RulesContext = Rules | Record<string, string>
-
-export const AidomxContext = createContext<RulesContext>({})
+export const AidomxContext = createContext<Rules>({} as Rules)

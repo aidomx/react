@@ -1,25 +1,24 @@
 'use client'
 
-import { ReactNode, useContext, useEffect } from 'react'
-import { AidomxContext } from './AidomxContext'
-import { AidomxElement } from './AidomxElement'
+import { HTMLAttributes, ReactNode } from 'react'
+import { useAidomx } from './AidomxProvider'
+import { ApplyRules } from './utils/ApplyRules'
 
-type Props = {
-  children: ReactNode
+type Props = HTMLAttributes<HTMLDivElement> & {
+  children?: ReactNode
+  name: string
 }
 
-export const Aidomx = ({ children }: Props) => {
-  const context = useContext(AidomxContext)
+export const Aidomx = ({ children, name, ...props }: Props) => {
+  const rules = useAidomx()
 
-  useEffect(() => {
-    const runContext = async () => {
-      if (context) {
-        await AidomxElement(context)
-      }
-    }
+  if (!rules?.root || rules.root !== name) return <>{children}</>
 
-    runContext()
-  }, [context, AidomxElement])
+  const applied = ApplyRules(rules, name)
 
-  return <>{children}</>
+  return (
+    <div {...applied} {...props}>
+      {children}
+    </div>
+  )
 }

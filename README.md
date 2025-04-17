@@ -1,20 +1,23 @@
 # Aidomx React
 
-[![npm version](https://img.shields.io/npm/v/@aidomx/react?color=blue&label=npm)](https://www.npmjs.com/package/@aidomx%2react)
+[![npm version](https://img.shields.io/npm/v/@aidomx/react?color=blue&label=npm)](https://www.npmjs.com/package/@aidomx/react)
 [![license](https://img.shields.io/npm/l/@aidomx/react?cacheSeconds=60)](LICENSE)
 [![Build status](https://github.com/aidomx/react/actions/workflows/ci.yml/badge.svg)](#)
 
-**Lightweight, reactive, and DOM-first React integration**
+**Lightweight, reactive, and identity-driven React integration**
 
-**Aidomx React** adalah integrasi React dari library [aidomx](https://github.com/aidomx/aidomx) — sebuah alat ringan untuk manipulasi DOM yang berfokus pada performa, fleksibilitas, dan kesederhanaan.
+**Aidomx React** adalah integrasi untuk framework [aidomx](https://github.com/aidomx/aidomx) — pendekatan ringan dan modular untuk menerapkan struktur, gaya, dan interaksi secara deklaratif berbasis identitas komponen.
 
-Aidomx React memberikan API yang intuitif dan reaktif untuk menghubungkan komponen React dengan behavior DOM secara dinamis, tanpa mengorbankan kontrol penuh terhadap elemen HTML.
+---
 
 ## Fitur Utama
 
-- Integrasi seamless antara React dan DOM melalui aidomx
-- Minimalis dan ringan
-- Cocok untuk framework seperti Next.js, Vite, atau CRA
+- Penulisan UI berbasis identitas (`vAi`) untuk struktur dan perilaku yang bersih
+- Integrasi ringan dan kontekstual melalui React Context
+- Dapat digunakan di Next.js, Vite, CRA, dan lainnya
+- Minim boilerplate dan sangat fleksibel untuk sistem desain yang kompleks
+
+---
 
 ## Instalasi
 
@@ -22,55 +25,87 @@ Aidomx React memberikan API yang intuitif dan reaktif untuk menghubungkan kompon
 npm install @aidomx/react
 ```
 
-## Penggunaan
+---
 
-Contoh penggunaan dasar:
+## Struktur Penggunaan
 
-```tsx
-import { AidomxProvider } from '@aidomx/react'
+### 1. `rules/index.ts`
 
-const rules = {
-  // Root element hanya digunakan untuk identitas
+```ts
+export const rules = {
   root: 'container',
-  // Components dalam bentuk object[]
+  className: 'min-h-screen bg-gray-100 flex items-center justify-center flex-col gap-4',
   components: [
     {
-      // name digunakan untuk identitas dari v-ai="brand"
       name: 'brand',
-      // className support tailwindcss atau yang lain.
-      className: 'font-bold text-4xl',
-      // Atau tulis dengan gaya klasik
-      // style: {...},
-      // Support position
-      posAfter: 'identitas',
-      postBefore: 'identitas',
-      // Event listeners bisa diterapkan disini.
-      onClick: () => {
-        alert('You click me!')
-      },
+      className: 'text-4xl font-bold text-blue-600',
+    },
+    {
+      name: 'button',
+      className: 'px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded',
+      onClick: () => alert('You clicked a button!'),
+    },
+    {
+      name: 'box',
+      className: 'p-4 border border-dashed border-gray-400 rounded w-full max-w-md',
     },
   ],
-  // Semua dukungan pada components bisa digunakan diroot.
-  className: 'bg-gray-100',
 }
+```
 
-export default function App() {
+---
+
+### 2. `app/layout.tsx`
+
+```tsx
+import './globals.css'
+import { AidomxProvider } from '@aidomx/react'
+import { rules } from '@/rules'
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <AidomxProvider value={rules}>
-      <div v-ai="container">
-        <h1 v-ai="brand">Brand</h1>
-      </div>
-    </AidomxProvider>
+    <html lang="en">
+      <body>
+        <AidomxProvider value={rules}>
+          {children}
+        </AidomxProvider>
+      </body>
+    </html>
   )
 }
 ```
 
-## Fitur
+---
 
-- Integrasi seamless dengan React Context
-- Dukungan SSR-ready
-- Kompatibel dengan aidomx DOM hooks
-- Dukungan penggunaan tanpa root element secara eksplisit
+### 3. `app/page.tsx` (atau `app/Home.tsx`)
+
+```tsx
+'use client'
+
+import { Aidomx, Text, Button, Box } from '@aidomx/react'
+
+export default function Home() {
+  return (
+    <Aidomx name="container">
+      <Text vAi="brand">Hello aidomx!</Text>
+      <Box vAi="box">
+        <p className="text-gray-600">This is a box component with custom styles.</p>
+        <Button vAi="button">Click Me</Button>
+      </Box>
+    </Aidomx>
+  )
+}
+```
+
+---
+
+## Kenapa Aidomx?
+
+Aidomx memungkinkan kamu membangun **komponen yang fleksibel, dinamis, dan tetap terstruktur** — tanpa harus mencampurkan banyak logika di dalam JSX.
+
+Dengan pemisahan aturan berbasis identitas, Aidomx mempermudah scaling antarkomponen dan mengurangi ketergantungan pada className berulang.
+
+---
 
 ## Lisensi
 
@@ -80,4 +115,4 @@ MIT © 2025 [@aidomx](https://github.com/aidomx/react/LICENSE)
 
 Aidomx dibuat dan dikembangkan oleh [@aidomx](https://github.com/aidomx)
 
-> "DOM bisa fleksibel dan reaktif tanpa perlu kompleks. Aidomx menghadirkan itu."
+> “UI yang rapi dan fleksibel bukan soal library besar, tapi cara kita menyusunnya. Aidomx membawanya jadi lebih ringan.”

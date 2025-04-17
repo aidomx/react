@@ -2,26 +2,27 @@
 
 import { ReactNode, useContext } from 'react'
 import { AidomxContext } from './AidomxContext'
-import type { Rules } from 'aidomx'
-import { Aidomx } from './Aidomx'
+import { AidomxNextProvider } from './AidomxNextProvider'
+import type { Rules } from './types'
 
 type Props = {
   children: ReactNode
-  value: Rules | Record<string, string>
+  value: Rules
 }
 
 export const AidomxProvider = ({ children, value }: Props) => {
   return (
     <AidomxContext.Provider value={value}>
-      <Aidomx>{children}</Aidomx>
+      <AidomxNextProvider>{children}</AidomxNextProvider>
     </AidomxContext.Provider>
   )
 }
 
 export const useAidomx = () => {
-  const ctx = useContext(AidomxContext)
+  const ctx: Rules = useContext(AidomxContext)
+
   if (!ctx) {
-    console.warn('[Aidomx] No context')
+    console.warn('[Aidomx] No context provider!')
   }
 
   return ctx
