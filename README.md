@@ -32,7 +32,9 @@ npm install @aidomx/react
 ### 1. `rules/index.ts`
 
 ```ts
-export const rules = {
+import { defineRules } from '@aidomx/react'
+
+export const rules = defineRules({
   root: 'container',
   className:
     'min-h-screen bg-gray-100 flex items-center justify-center flex-col gap-4',
@@ -52,7 +54,7 @@ export const rules = {
         'p-4 border border-dashed border-gray-400 rounded w-full max-w-md',
     },
   ],
-}
+})
 ```
 
 ---
