@@ -1,17 +1,36 @@
 # Changelog
 
-## [0.0.4] - Upcoming
+## [0.0.4] - 18 April 2025
 
 ### Added
 
-- Penambahan direktori `src/hooks/` untuk modularisasi logika seperti `useOnList`, `useOnState`, dan lainnya.
-- Menyiapkan pola hooks terpisah untuk event handler dan state.
-- Draft `useOnList`: untuk menangani event-event seperti `onClick`, `onHover`, dll.
-- Draft `useOnState`: untuk state sinkron antara controlled dan uncontrolled component.
+- Penambahan `ui element` dan `layouts` berbasis sistem rules.
+- Penambahan `CreateElementWrapper` untuk membungkus komponen secara dinamis dengan tag dan rules.
+- Implementasi `ComponentCompiler` dan `RootCompiler` untuk memisahkan logika apply rules berdasarkan jenis komponen.
+- Penerapan `Registry` untuk mendukung konsep _ghost components_ agar komponen bisa digunakan tanpa harus didefinisikan secara eksplisit.
+- Pembuatan sistem rules berbasis `registry` agar lebih fleksibel dibanding `proxy`.
+- Penambahan `Aidomx` sebagai alias root registry default.
+- Draft awal untuk `useOnList` dan `useOnState` sebagai rencana hooks modular (belum digunakan aktif).
+- Penambahan utilitas `eventMap` untuk mengidentifikasi semua properti event handler React.
+- Penambahan fungsi `excludeEventHandlers()` untuk memisahkan event handler dari objek komponen sebelum cloning.
 
 ### Changed
 
-- Menyesuaikan struktur kode agar lebih deklaratif dan fleksibel, mendukung sistem hook internal.
+- Refactor besar-besaran `defineRules`, menggabungkan utilitas dan proxy menjadi satu sistem terpusat.
+- Perubahan strategi dari `proxy-based` ke `registry-based` dalam mendefinisikan dan memanggil komponen.
+- Refactor `ApplyRules` agar otomatis menyaring props dan menerapkan rules dengan lebih konsisten.
+- Penyederhanaan logika skeleton dan penerapannya langsung melalui registry, tidak perlu lagi dicek di tiap layout/ui.
+- Penyesuaian struktur agar lebih deklaratif, mendukung arsitektur UI berbasis data dan rules-driven rendering.
+- Default `skeleton.className` kini lebih ringan, tanpa `animate-pulse` agar tidak membebani render.
+
+### Fixed
+
+- Menghindari error `DataCloneError` akibat cloning fungsi event handler seperti `onClick`, `onScroll`, dll, dengan memisahkannya sebelum cloning dan menyuntik ulang setelahnya.
+- Performa render Aidomx di Next.js sekarang stabil pada kisaran `~40ms` untuk halaman dengan rules aktif dan komponen interaktif.
+
+### Removed
+
+- Rencana penggunaan direktori `src/hooks/` ditunda karena `onList` dan `onState` masih dikelola dalam `src/utils`.
 
 ## [0.0.3] - 17 April 2025
 

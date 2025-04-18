@@ -3,7 +3,7 @@
 import { ReactNode, useContext } from 'react'
 import { AidomxContext } from './AidomxContext'
 import { AidomxNextProvider } from './AidomxNextProvider'
-import type { Rules } from './types'
+import type { Rules } from '../types'
 
 type Props = {
   children: ReactNode

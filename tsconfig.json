@@ -4,7 +4,7 @@
     // "rootDir": ".",
     "outDir": "dist",
     "module": "ESNext",
-    "target": "ESNext",
+    "target": "ES2017",
     "moduleResolution": "bundler",
     "strict": true,
     "esModuleInterop": true,
@@ -12,11 +12,9 @@
     "declarationDir": "dist",
     "emitDeclarationOnly": true,
     "paths": {
-      "@/*": ["./*"],
-      "@/s/*": ["./src/*"],
-      "@/components/*": ["./src/components/*"]
+      "@/*": ["./*"]
     }
   },
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "src/components"]
 }

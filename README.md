@@ -34,7 +34,8 @@ npm install @aidomx/react
 ```ts
 export const rules = {
   root: 'container',
-  className: 'min-h-screen bg-gray-100 flex items-center justify-center flex-col gap-4',
+  className:
+    'min-h-screen bg-gray-100 flex items-center justify-center flex-col gap-4',
   components: [
     {
       name: 'brand',
@@ -47,7 +48,8 @@ export const rules = {
     },
     {
       name: 'box',
-      className: 'p-4 border border-dashed border-gray-400 rounded w-full max-w-md',
+      className:
+        'p-4 border border-dashed border-gray-400 rounded w-full max-w-md',
     },
   ],
 }
@@ -62,13 +64,15 @@ import './globals.css'
 import { AidomxProvider } from '@aidomx/react'
 import { rules } from '@/rules'
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
       <body>
-        <AidomxProvider value={rules}>
-          {children}
-        </AidomxProvider>
+        <AidomxProvider value={rules}>{children}</AidomxProvider>
       </body>
     </html>
   )
@@ -89,7 +93,9 @@ export default function Home() {
     <Aidomx name="container">
       <Text vAi="brand">Hello aidomx!</Text>
       <Box vAi="box">
-        <p className="text-gray-600">This is a box component with custom styles.</p>
+        <p className="text-gray-600">
+          This is a box component with custom styles.
+        </p>
         <Button vAi="button">Click Me</Button>
       </Box>
     </Aidomx>
@@ -99,13 +105,36 @@ export default function Home() {
 
 ---
 
-## Kenapa Aidomx?
+## Benchmark Sederhana
 
-Aidomx memungkinkan kamu membangun **komponen yang fleksibel, dinamis, dan tetap terstruktur** — tanpa harus mencampurkan banyak logika di dalam JSX.
+Aidomx menggunakan pendekatan deklaratif ringan dan berbasis identitas. Berikut hasil pengukuran waktu render halaman pada lingkungan pengembangan:
 
-Dengan pemisahan aturan berbasis identitas, Aidomx mempermudah scaling antarkomponen dan mengurangi ketergantungan pada className berulang.
+| Halaman                          | Waktu Render (dev) |
+| -------------------------------- | ------------------ |
+| Home (Aidomx + styling + button) | 62.90ms            |
+| About (tanpa Aidomx)             | 60.30ms            |
+
+**Kesimpulan:** Overhead dari penggunaan Aidomx sangat minimal (~2ms) dan tetap menjaga efisiensi bahkan dengan komponen interaktif dan styling aktif.
 
 ---
+
+## Roadmap
+
+- [x] Provider dan konversi `rules` ke komponen berbasis context
+- [x] Wrapper dinamis untuk `Layout` dan `UI`
+- [x] Skeleton renderer berbasis rules
+- [x] Modularisasi dan utilitas `eventMaps`
+- [ ] Sistem autoGen untuk membuat ekspor komponen UI dari rules
+- [ ] Fitur include/exclude untuk logika deklaratif di rules
+- [ ] Komponen tambahan dan preset siap pakai (`Card`, `Form`, dsb.)
+
+---
+
+## Kenapa Aidomx?
+
+Aidomx memungkinkan kamu membangun komponen yang fleksibel, dinamis, dan tetap terstruktur — tanpa harus mencampurkan banyak logika di dalam JSX.
+
+Dengan pemisahan aturan berbasis identitas, Aidomx mempermudah scaling antarkomponen dan mengurangi ketergantungan pada className berulang.
 
 ## Lisensi
 
