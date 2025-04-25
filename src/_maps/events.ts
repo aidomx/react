@@ -1,5 +1,4 @@
-// src/utils/eventMaps.ts
-export const eventMaps: string[] = [
+export const eventMaps = [
   // Mouse Events
   'onClick',
   'onDoubleClick',
@@ -112,5 +111,3 @@ export const eventMaps: string[] = [
   'onClickCapture',
   'onSubmitCapture',
 ]
-
-export default eventMaps

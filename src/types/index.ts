@@ -1,3 +1,5 @@
-export type * from './component'
+export type * from './compiler'
+export type * from './helpers'
+export type * from './props'
 export type * from './rules'
 export type * from './shared'

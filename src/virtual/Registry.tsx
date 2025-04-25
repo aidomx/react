@@ -1,9 +1,9 @@
 'use client'
 
-import { CreateElementWrapper } from '@/src/core'
 import { ReactNode } from 'react'
-import { useAidomx } from '@/src/providers'
-import { getSkeletonProps, isSkeletonEnabled } from '@/src/utils'
+import { useAidomx } from '../providers'
+import { CreateElementWrapper } from '../core'
+import { getSkeletonProps, SkeletonUI } from '../utils'
 
 /**
  * Props untuk komponen `Layout`, digunakan untuk elemen root utama.
@@ -25,7 +25,7 @@ type LayoutProps = {
 export const Layout = ({ name, children }: LayoutProps) => {
   const rules = useAidomx()
 
-  if (isSkeletonEnabled(rules, name)) {
+  if (SkeletonUI(rules, name)) {
     const { className, style } = getSkeletonProps(rules, name)
     return <div className={className} style={style} />
   }
@@ -34,7 +34,11 @@ export const Layout = ({ name, children }: LayoutProps) => {
     rules?.root === name && rules[name]?.tagName ? rules[name].tagName : 'div'
 
   return (
-    <CreateElementWrapper name={name} tagName={tagName}>
+    <CreateElementWrapper
+      name={name}
+      tagName={tagName}
+      featureType={rules.type}
+    >
       {children}
     </CreateElementWrapper>
   )
@@ -59,7 +63,7 @@ type UIProps = {
 export const UI = ({ vAi, children }: UIProps) => {
   const rules = useAidomx()
 
-  if (isSkeletonEnabled(rules, vAi)) {
+  if (SkeletonUI(rules, vAi)) {
     const { className, style } = getSkeletonProps(rules, vAi)
     return <div className={className} style={style} />
   }
@@ -68,7 +72,7 @@ export const UI = ({ vAi, children }: UIProps) => {
   const tagName = component?.tagName || 'div'
 
   return (
-    <CreateElementWrapper name={vAi} tagName={tagName}>
+    <CreateElementWrapper name={vAi} tagName={tagName} featureType={rules.type}>
       {children}
     </CreateElementWrapper>
   )

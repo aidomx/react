@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.0.5] - Upcoming
+
+### Added
+
+- Menambahkan `src/constants/rulesKey.ts` dan `ghostId.ts` untuk konsistensi key internal Aidomx.
+- Menambahkan `src/features/nested-list` sebagai contoh fitur turunan rules-based.
+- Menambahkan `src/_maps/features.ts`, `ghostMap.ts`, `rulesProps.ts`, dan `ghostElements.ts` untuk konfigurasi pemetaan internal dan pengelolaan ghost elements.
+- Menambahkan `src/rules/virtual/` sebagai sistem layer virtual dengan `actions.ts`, `index.ts`, dan `README.md`.
+- Menambahkan `src/rules/store/manipulation.ts` sebagai alias logic (`morph`, `mutate`, `rupa`, `evolve`) untuk store components.
+- Menambahkan `src/rules/manage/componentsSynced.ts` dan `rootSynced.ts` untuk menyinkronkan aturan root dan components.
+- Menambahkan `README.md` pada folder `store` dan `virtual` untuk dokumentasi internal modular system.
+- Menambahkan `src/utils/resolvedPath.ts` dan `src/utils/normalizeRules.ts` sebagai proteksi data.
+
+### Changed
+
+- Struktur ekspor `src/rules/index.ts` kini mengekspor seluruh bagian rules: `defineRules`, `manage`, `store`, `route`, dan `virtual`.
+- Menyederhanakan struktur `src/core/` menjadi hanya compiler logika utama: `RootCompiler.ts`, `ComponentCompiler.ts`, dan `CreateElementWrapper.tsx`.
+- Properti `routes` pada `rules` digunakan untuk proteksi data.
+
+### Notes
+
+- Versi ini menandai refactor besar menuju sistem rules-based yang lebih modular, dapat diskalakan, dan siap menuju fase eksperimen penuh.
+- Tujuan utama adalah memisahkan concerns, mempermudah dokumentasi, dan menyederhanakan proses integrasi logika ghost layer dan virtual layer.
+
 ## [0.0.4] - 18 April 2025
 
 ### Added

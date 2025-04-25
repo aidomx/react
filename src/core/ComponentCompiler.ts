@@ -1,16 +1,16 @@
-import { ApplyComponentRules } from '@/src/utils'
 import { useAidomx } from '../providers'
-import type { Component } from '@/src/types'
+import { componentsSynced } from '../rules'
+import type { CompilerProps, Component } from '../types'
 
-type ComponentCompilerProps = {
-  name: string
-  [key: string]: any
-}
-
-export const ComponentCompiler = ({
-  name = '',
-  ...props
-}: ComponentCompilerProps) => {
+/**
+ * Komponen ComponentCompiler untuk mengelola dan menggabungkan aturan dengan props berdasarkan komponen.
+ * Mengambil aturan dari konteks (context) atau store dan mencocokkan dengan komponen yang sesuai berdasarkan nama.
+ * Jika komponen tidak ditemukan, maka hanya props yang dikembalikan.
+ *
+ * @param {ComponentCompilerProps} props - Props yang diterima oleh komponen.
+ * @returns `{Record<string, any>}` - Gabungan antara aturan yang diterapkan dan props yang diteruskan.
+ */
+export const ComponentCompiler = ({ name = '', ...props }: CompilerProps) => {
   const rules = useAidomx()
 
   const component: Component | undefined = rules?.components?.find(
@@ -19,10 +19,10 @@ export const ComponentCompiler = ({
 
   if (!component) return { ...props }
 
-  const appliedRules = ApplyComponentRules(component, name)
+  const syncedRules = componentsSynced(component, name)
 
   return {
-    ...appliedRules,
+    ...syncedRules,
     ...props,
   }
 }

@@ -3,6 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/@aidomx/react?color=blue&label=npm)](https://www.npmjs.com/package/@aidomx/react)
 [![license](https://img.shields.io/npm/l/@aidomx/react?cacheSeconds=60)](LICENSE)
 [![Build status](https://github.com/aidomx/react/actions/workflows/ci.yml/badge.svg)](#)
+[![NPM Downloads](https://img.shields.io/npm/dw/%40aidomx%2Freact)](#)
 
 **Lightweight, reactive, and identity-driven React integration**
 
@@ -54,6 +55,9 @@ export const rules = defineRules({
         'p-4 border border-dashed border-gray-400 rounded w-full max-w-md',
     },
   ],
+  routes: {
+    '/': ['box'],
+  },
 })
 ```
 
@@ -107,6 +111,68 @@ export default function Home() {
 
 ---
 
+# Penggunaan createStore
+
+createStore digunakan untuk mengatur data pada component, mirip dengan useState tetapi tidak, karena `createStore` hanya mengatur data berdasarkan yang ada di component.
+
+## Contoh
+
+```ts
+const store = createStore(rules)
+
+store.rupa('products', async (ctx) => {
+  // referensi berdasarkan components[products].data
+  await ctx.add({ name: 'baju' })
+
+  // ctx.get()
+  // ctx.update()
+  // ctx.remove()
+  // ctx.reset()
+})
+```
+
+---
+
+# Penggunaan createGhost
+
+createGhost digunakan untuk membuat elemen virtual yang terhubung dengan data yang sudah ada. Ini memungkinkan kita untuk mengatur elemen tanpa mengubah data utama, memberikan lebih banyak fleksibilitas dan efisiensi dalam merender UI.
+
+## Contoh penggunaan createGhost:
+
+```ts
+import { createGhost } from '@aidomx/react'
+
+const VirtualBox = createGhost('box', {
+  className: 'virtual-box'
+})
+
+export default function Home() {
+  return (
+    <div>
+      <VirtualBox />
+    </div>
+  )
+}
+```
+
+---
+
+# Routes dan Pengaturan Akses
+
+Dalam Aidomx, pengaturan routes dapat dilakukan di dalam rules untuk membatasi akses dan menentukan bagaimana elemen harus ditangani pada pathname tertentu.
+
+## Struktur routes:
+
+```ts
+routes: {
+  "/": []
+}
+```
+
+Di sini, setiap rute dihubungkan dengan path yang sesuai dan daftar komponen yang diizinkan untuk mengaksesnya. Sistem ini memungkinkan pengaturan akses lebih lanjut berdasarkan rute dan data terkait.
+
+---
+
 ## Benchmark Sederhana
 
 Aidomx menggunakan pendekatan deklaratif ringan dan berbasis identitas. Berikut hasil pengukuran waktu render halaman pada lingkungan pengembangan:
@@ -126,9 +192,8 @@ Aidomx menggunakan pendekatan deklaratif ringan dan berbasis identitas. Berikut 
 - [x] Wrapper dinamis untuk `Layout` dan `UI`
 - [x] Skeleton renderer berbasis rules
 - [x] Modularisasi dan utilitas `eventMaps`
-- [ ] Sistem autoGen untuk membuat ekspor komponen UI dari rules
-- [ ] Fitur include/exclude untuk logika deklaratif di rules
-- [ ] Komponen tambahan dan preset siap pakai (`Card`, `Form`, dsb.)
+- [x] createStore untuk memanipulasi data per-komponen.
+- [x] createVirtual untuk membuat component.
 
 ---
 
