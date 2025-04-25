@@ -3,7 +3,7 @@
 Folder `src/rules` merupakan inti dari sistem rule-based yang digunakan untuk mengelola logika dinamis, kontrol data, dan virtualisasi komponen dalam framework ini.
 
 ## Struktur
-
+```
 src/rules/
 ├── define.ts # Mendefinisikan rules secara deklarati
 ├── index.ts # Entry point dan re-export
@@ -11,6 +11,7 @@ src/rules/
 ├── store/ # Sistem penyimpanan state rules-based (createStore)
 ├── virtual/ # Sistem ghost/virtual layer UI (createVirtual)
 └── README.md # Dokumentasi folder ini
+```
 
 ## Modul Utama
 
