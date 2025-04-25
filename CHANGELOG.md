@@ -1,6 +1,28 @@
 # Changelog
 
-## [0.0.5] - Upcoming
+Semua perubahan signifikan pada project ini akan didokumentasikan di sini.
+
+Format:
+
+- **Added**: Penambahan fitur baru
+- **Changed**: Perubahan perilaku atau struktur yang sudah ada
+- **Deprecated**: Fitur yang akan dihapus di versi mendatang
+- **Removed**: Fitur yang sudah dihapus
+- **Fixed**: Perbaikan bug
+- **Security**: Perubahan terkait keamanan
+
+---
+
+## [0.0.6] - Upcoming
+
+### Notes
+
+- `createStore` dan `createVirtual` akan lebih dioptimalkan.
+- Fungsi `rupa`, `morph`, `mutate`, dan `evolve` akan mulai dibedakan berdasarkan peran mereka.
+- Performa `createGhost` akan lebih disempurnakan untuk mendukung rendering virtual yang lebih efisien.
+- Prototype `duplicate`, `freeze`, `get`, `loop`, `maintence`, `remove`, `render`, dan `sort` dari `createVirtual` akan dikembangkan lebih lanjut.
+
+## [0.0.5] - 25 April 2025
 
 ### Added
 
@@ -12,12 +34,19 @@
 - Menambahkan `src/rules/manage/componentsSynced.ts` dan `rootSynced.ts` untuk menyinkronkan aturan root dan components.
 - Menambahkan `README.md` pada folder `store` dan `virtual` untuk dokumentasi internal modular system.
 - Menambahkan `src/utils/resolvedPath.ts` dan `src/utils/normalizeRules.ts` sebagai proteksi data.
+- Penambahan `createGhost` untuk dukungan layer virtual UI.
 
 ### Changed
 
 - Struktur ekspor `src/rules/index.ts` kini mengekspor seluruh bagian rules: `defineRules`, `manage`, `store`, `route`, dan `virtual`.
 - Menyederhanakan struktur `src/core/` menjadi hanya compiler logika utama: `RootCompiler.ts`, `ComponentCompiler.ts`, dan `CreateElementWrapper.tsx`.
-- Properti `routes` pada `rules` digunakan untuk proteksi data.
+- Refactor internal struktur rules dan store agar lebih modular.
+- Penyesuaian struktur `routes` dan `secureRules` untuk membatasi akses berbasis pathname.
+- Implementasi `onList` dan `onState` yang sepenuhnya digantikan oleh `createStore`.
+
+### Deleted
+
+- Sebagian besar file lama telah dihapus, guna untuk modularisasi dalam pengembangan.
 
 ### Notes
 
