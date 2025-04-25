@@ -140,20 +140,27 @@ createGhost digunakan untuk membuat elemen virtual yang terhubung dengan data ya
 ## Contoh penggunaan createGhost:
 
 ```ts
-import { createGhost } from '@aidomx/react'
+import { createVirtual } from '@aidomx/react'
 
-const VirtualBox = createGhost('box', {
-  className: 'virtual-box'
+const vr = createVirtual(rules)
+
+vr.createGhost('box', {
+ entries: [
+    {
+      name: 'products',
+      tag: 'ol',
+      children: [
+        {
+          tag: 'li',
+          text: 'Baju lebaran',
+        },
+      ],
+    },
+ ],
+ autoCompile: true
 })
-
-export default function Home() {
-  return (
-    <div>
-      <VirtualBox />
-    </div>
-  )
-}
 ```
+`createGhost` akan secara otomatis menulis di `rules`, ini cukup meringankan beban menulis html.
 
 ---
 
