@@ -21,7 +21,6 @@
 - Komponen `Aidomx` bertanggung jawab merender UI berdasarkan scope dan rules
 - Dukungan penuh terhadap `Next.js 15` dan `React 19`
 
-
 ---
 
 ## Instalasi
@@ -29,6 +28,7 @@
 ```bash
 npm install @aidomx/react
 ```
+
 > Pastikan @aidomx/core sudah tersedia secara lokal atau sebagai dependency.
 
 ---
@@ -165,9 +165,25 @@ Aidomx terdiri dari dua bagian utama:
 
 ### example
 
-```ts
+```tsx
+// app/providers.tsx
+// src/app/providers.tsx
+'use client'
+
+import { ReactNode } from 'react'
+import { rules } from '../rules'
+import { AidomxProvider } from '@aidomx/react'
+
+export function Providers({ children }: { children: ReactNode }) {
+  return <AidomxProvider value={rules}>{children}</AidomxProvider>
+}
+```
+
+```tsx
+// app/layout.tsx
+// atau src/app/layout.tsx
 import './globals.css'
-import { AidomxProvider } from '@/providers'
+import { Providers } from './providers'
 import { rules } from '@/rules'
 
 export default function RootLayout({
@@ -177,9 +193,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className="">
-        <AidomxProvider value={rules}>{children}</AidomxProvider>
+      <body className="">
+        <Providers>{children}</Providers>
       </body>
     </html>
   )
@@ -187,6 +202,14 @@ export default function RootLayout({
 ```
 
 ---
+
+# Rules secret key
+
+Tambahkan `RULES_SECRET_KEY` di file `.env` atau `.env.local`
+
+```bash
+RULES_SECRET_KEY="secret"
+```
 
 # Roadmap
 

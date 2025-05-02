@@ -13,7 +13,7 @@ Format:
 
 ---
 
-## [v0.1.0] - Upcoming
+## [v0.1.0] - 2 May, 2025
 
 ### Changed
 

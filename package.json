@@ -34,7 +34,7 @@
     "ui"
   ],
   "dependencies": {
-    "@aidomx/core": "file:../core"
+    "@aidomx/core": "^0.1.0"
   },
   "devDependencies": {
     "@types/node": "^20",
