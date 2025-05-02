@@ -1,12 +1,12 @@
 'use client'
 
-import { RuleComponent } from '@aidomx/core'
+import type { RuleComponent } from '@aidomx/core'
 import { GhostWrapper } from '@/components/GhostWrapper'
 import { useAidomx } from './AidomxProvider'
 
 type Props = {
   name: string
-  scope: Record<string, RuleComponent | RuleComponent[]>
+  scope: Record<string,  RuleComponent | RuleComponent[]>
 }
 
 export const Aidomx = ({ name, scope }: Props) => {

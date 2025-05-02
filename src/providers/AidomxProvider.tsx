@@ -2,11 +2,11 @@
 
 import { ReactNode, useContext } from 'react'
 import { AidomxContext } from './AidomxContext'
-import { defineRules, RULES_SECRET_KEY, type RulesConfig } from '@aidomx/core'
+import { defineRules, RULES_SECRET_KEY, type Rules } from '@aidomx/core'
 
 type Props = {
   children: ReactNode
-  value: RulesConfig
+  value: Rules
 }
 
 export const AidomxProvider = ({ children, value }: Props) => {
@@ -17,7 +17,7 @@ export const AidomxProvider = ({ children, value }: Props) => {
   )
 }
 
-export const useAidomx = (): RulesConfig => {
+export const useAidomx = (): Rules => {
   const ctx = useContext(AidomxContext)
 
   if (!ctx) {

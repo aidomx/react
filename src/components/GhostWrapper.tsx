@@ -2,7 +2,7 @@
 
 import {
   createVirtual,
-  type RulesConfig,
+  type Rules,
   type RuleComponent,
   Listeners,
   Design,
@@ -12,7 +12,7 @@ import { SkeletonUI } from './Skeleton'
 
 type GhostProps = {
   name: string // hanya untuk id/wrapper
-  rules: RulesConfig
+  rules: Rules
   scope?: Record<string, RuleComponent | RuleComponent[]>
 }
 
