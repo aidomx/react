@@ -8,19 +8,17 @@
     "CHANGELOG.md",
     "LICENSE"
   ],
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.mts",
+  "type": "module",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.js"
     }
   },
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
     "build": "tsup",
-    "start": "next start",
-    "lint": "next lint",
     "prepublishOnly": "npm run build"
   },
   "homepage": "https://github.com/aidomx/react#readme",
@@ -36,21 +34,18 @@
     "ui"
   ],
   "dependencies": {
-    "next": "15.3.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "@aidomx/core": "file:../core"
   },
   "devDependencies": {
-    "@aidomx/core": "^0.0.1",
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.3.1",
     "tailwindcss": "^4",
     "tsup": "^8.4.0",
     "typescript": "^5"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }

@@ -3,13 +3,14 @@
 import type { RuleComponent } from '@aidomx/core'
 import { GhostWrapper } from '@/components/GhostWrapper'
 import { useAidomx } from './AidomxProvider'
+import { ReactNode } from 'react'
 
 type Props = {
   name: string
-  scope: Record<string,  RuleComponent | RuleComponent[]>
+  scope: Record<string, RuleComponent | RuleComponent[]>
 }
 
-export const Aidomx = ({ name, scope }: Props) => {
+export const Aidomx = ({ name, scope }: Props): ReactNode => {
   const resolved = useAidomx()
 
   if (!resolved?.root || !resolved?.components || resolved.root !== name)

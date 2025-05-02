@@ -1,3 +1,5 @@
+'use client'
+
 import type { Skeleton } from '@aidomx/core'
 
 type Props = {

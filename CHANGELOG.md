@@ -36,7 +36,6 @@ Format:
 
 This version marks a structural split:  
 `@aidomx/react` is now responsible only for rendering components using declarative rules. All logic, transformation, and dynamic composition is now maintained and extended through `@aidomx/core`.
->>>>>>> 97c6176 (big refactor for prepare production)
 
 ## [0.0.5] - 25 April 2025
 
