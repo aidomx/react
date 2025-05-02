@@ -1,13 +1,19 @@
 {
   "name": "@aidomx/react",
+<<<<<<< HEAD
   "version": "0.0.4",
   "type": "module",
+=======
+  "version": "0.1.0",
+  "main": "dist/index.js",
+>>>>>>> 97c6176 (big refactor for prepare production)
   "files": [
     "dist",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"
   ],
+<<<<<<< HEAD
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -16,6 +22,22 @@
     ".": {
       "import": "./dist/index.js"
     }
+=======
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.mts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs"
+    }
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "tsup",
+    "start": "next start",
+    "lint": "next lint",
+    "prepublishOnly": "npm run build"
+>>>>>>> 97c6176 (big refactor for prepare production)
   },
   "homepage": "https://github.com/aidomx/react#readme",
   "bugs": {
@@ -29,6 +51,7 @@
     "react",
     "ui"
   ],
+<<<<<<< HEAD
   "scripts": {
     "dev": "tsup src/index.ts --watch",
     "build": "tsup",
@@ -49,5 +72,24 @@
   "peerDependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
+=======
+  "dependencies": {
+    "next": "15.3.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@aidomx/core": "file:../core",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.1",
+    "tailwindcss": "^4",
+    "tsup": "^8.4.0",
+    "typescript": "^5"
+>>>>>>> 97c6176 (big refactor for prepare production)
   }
 }

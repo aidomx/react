@@ -7,16 +7,34 @@
     "module": "ESNext",
     "target": "ES2017",
     "moduleResolution": "bundler",
+<<<<<<< HEAD
     "strict": true,
     "esModuleInterop": true,
     "declaration": true,
     "declarationDir": "dist",
     "emitDeclarationOnly": true,
     "allowSyntheticDefaultImports": true,
+=======
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": false,
+    "declaration": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+>>>>>>> 97c6176 (big refactor for prepare production)
     "paths": {
       "@/*": ["./*"]
     }
   },
+<<<<<<< HEAD
   "include": ["src", "experimental"],
   "exclude": ["node_modules", "experimental", "src/components"]
+=======
+  "include": ["src"],
+  "exclude": ["node_modules"]
+>>>>>>> 97c6176 (big refactor for prepare production)
 }

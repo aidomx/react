@@ -13,6 +13,7 @@ Format:
 
 ---
 
+<<<<<<< HEAD
 ## [0.0.6] - Upcoming
 
 ### Notes
@@ -21,6 +22,31 @@ Format:
 - Fungsi `rupa`, `morph`, `mutate`, dan `evolve` akan mulai dibedakan berdasarkan peran mereka.
 - Performa `createGhost` akan lebih disempurnakan untuk mendukung rendering virtual yang lebih efisien.
 - Prototype `duplicate`, `freeze`, `get`, `loop`, `maintence`, `remove`, `render`, dan `sort` dari `createVirtual` akan dikembangkan lebih lanjut.
+=======
+## [v0.1.0] - Upcoming
+
+### Changed
+
+- **All core logic has been moved to [`@aidomx/core`](https://www.npmjs.com/package/@aidomx/core).**
+- `@aidomx/react` now focuses solely on **UI rendering and React integration**.
+
+### Removed
+
+- Virtual element manipulation (`createGhost`, `spawnGhosts`, `sortGhost`, etc.)
+- State management features (`createStore`, `rupa`, etc.)
+- CLI and runtime abstractions
+
+### Added
+
+- Lightweight rendering components using `rules` definition
+- Simplified and optimized `AidomxProvider` for React Context
+- Compatibility layer with `@aidomx/core`
+
+### Notes
+
+This version marks a structural split:  
+`@aidomx/react` is now responsible only for rendering components using declarative rules. All logic, transformation, and dynamic composition is now maintained and extended through `@aidomx/core`.
+>>>>>>> 97c6176 (big refactor for prepare production)
 
 ## [0.0.5] - 25 April 2025
 
