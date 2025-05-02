@@ -1,20 +1,11 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
     // "rootDir": ".",
     "baseUrl": ".",
     "outDir": "dist",
     "module": "ESNext",
     "target": "ES2017",
     "moduleResolution": "bundler",
-<<<<<<< HEAD
-    "strict": true,
-    "esModuleInterop": true,
-    "declaration": true,
-    "declarationDir": "dist",
-    "emitDeclarationOnly": true,
-    "allowSyntheticDefaultImports": true,
-=======
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -25,16 +16,27 @@
         "name": "next"
       }
     ],
->>>>>>> 97c6176 (big refactor for prepare production)
     "paths": {
-      "@/*": ["./*"]
-    }
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "esModuleInterop": true
   },
-<<<<<<< HEAD
-  "include": ["src", "experimental"],
-  "exclude": ["node_modules", "experimental", "src/components"]
-=======
-  "include": ["src"],
-  "exclude": ["node_modules"]
->>>>>>> 97c6176 (big refactor for prepare production)
+  "include": [
+    "src",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

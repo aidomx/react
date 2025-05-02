@@ -13,16 +13,6 @@ Format:
 
 ---
 
-<<<<<<< HEAD
-## [0.0.6] - Upcoming
-
-### Notes
-
-- `createStore` dan `createVirtual` akan lebih dioptimalkan.
-- Fungsi `rupa`, `morph`, `mutate`, dan `evolve` akan mulai dibedakan berdasarkan peran mereka.
-- Performa `createGhost` akan lebih disempurnakan untuk mendukung rendering virtual yang lebih efisien.
-- Prototype `duplicate`, `freeze`, `get`, `loop`, `maintence`, `remove`, `render`, dan `sort` dari `createVirtual` akan dikembangkan lebih lanjut.
-=======
 ## [v0.1.0] - Upcoming
 
 ### Changed

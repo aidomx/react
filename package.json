@@ -1,28 +1,13 @@
 {
   "name": "@aidomx/react",
-<<<<<<< HEAD
-  "version": "0.0.4",
-  "type": "module",
-=======
   "version": "0.1.0",
   "main": "dist/index.js",
->>>>>>> 97c6176 (big refactor for prepare production)
   "files": [
     "dist",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"
   ],
-<<<<<<< HEAD
-  "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js"
-    }
-=======
   "module": "dist/index.mjs",
   "types": "dist/index.d.mts",
   "exports": {
@@ -37,7 +22,6 @@
     "start": "next start",
     "lint": "next lint",
     "prepublishOnly": "npm run build"
->>>>>>> 97c6176 (big refactor for prepare production)
   },
   "homepage": "https://github.com/aidomx/react#readme",
   "bugs": {
@@ -51,28 +35,6 @@
     "react",
     "ui"
   ],
-<<<<<<< HEAD
-  "scripts": {
-    "dev": "tsup src/index.ts --watch",
-    "build": "tsup",
-    "test": "jest",
-    "prepublishOnly": "npm run build"
-  },
-  "devDependencies": {
-    "@types/jest": "^29.5.14",
-    "@types/react": "^19.1.0",
-    "jest": "^29.7.0",
-    "jsdom": "^16.4.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "ts-jest": "^29.3.0",
-    "tsup": "^8.4.0",
-    "typescript": "^5.4.0"
-  },
-  "peerDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-=======
   "dependencies": {
     "next": "15.3.1",
     "react": "^19.0.0",
@@ -90,6 +52,5 @@
     "tailwindcss": "^4",
     "tsup": "^8.4.0",
     "typescript": "^5"
->>>>>>> 97c6176 (big refactor for prepare production)
   }
 }

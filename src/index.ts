@@ -1,15 +1,2 @@
-<<<<<<< HEAD
-export type * from './types'
-export * from './constants'
-export * from './core'
-export * from './features'
-export * from './_maps'
-export * from './providers'
-export * from './rules'
-export * from './security'
-export * from './utils'
-export * from './virtual'
-=======
 export * from './components'
 export * from './providers'
->>>>>>> 97c6176 (big refactor for prepare production)

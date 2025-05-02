@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-export * from './define'
-export * from './manage'
-export * from './store'
-export * from './virtual'
-=======
 import { defineRules } from '@aidomx/core'
 
 export const rules = defineRules({
@@ -16,4 +10,3 @@ export const rules = defineRules({
     content: 'Preparing ghost components...',
   },
 })
->>>>>>> 97c6176 (big refactor for prepare production)
