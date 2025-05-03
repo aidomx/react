@@ -13,6 +13,28 @@ Format:
 
 ---
 
+## [v0.1.1] - 3 May, 2025
+
+### Added
+
+- New error boundary components: `MissConfig.tsx` and `NotFound.tsx` for better debugging experience.
+- Semantic release support via `.releaserc` and GitHub Actions workflow `.github/workflows/release.yml`.
+- Type definitions folder `src/types/` for better type separation and clarity.
+
+### Changed
+
+- Refactored `GhostWrapper.tsx`, `Skeleton.tsx`, and `Aidomx.tsx` to align with the latest core structure.
+- Improved resilience and flexibility in rendering logic using `@aidomx/core@0.1.0`.
+
+### Removed
+
+- Removed legacy route resolution and debug config logic that are no longer relevant in production use.
+
+### Notes
+
+- First stable release to align with `@aidomx/core@0.1.0`.
+- Designed for high-performance dynamic rendering in React using rule-based architecture.
+
 ## [v0.1.0] - 2 May, 2025
 
 ### Changed

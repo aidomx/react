@@ -1,13 +1,8 @@
 'use client'
 
-import type { Skeleton } from '@aidomx/core'
+import type { SkeletonProps } from '@/types'
 
-type Props = {
-  name: string
-  skeleton?: Skeleton
-}
-
-export const SkeletonUI = ({ name, skeleton }: Props) => {
+export const SkeletonUI = ({ name, skeleton }: SkeletonProps) => {
   if (!skeleton?.status) return null
 
   return (

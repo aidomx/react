@@ -114,7 +114,7 @@ export default dashboard
 ```ts
 'use client'
 
-import { Aidomx } from '@/providers/Aidomx'
+import { Aidomx } from '@aidomx/react'
 import dashboard from '@/rules/components/dashboard'
 import { useEffect, useRef, useState } from 'react'
 

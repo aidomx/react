@@ -1,22 +1,12 @@
 'use client'
 
-import {
-  createVirtual,
-  type Rules,
-  type RuleComponent,
-  Listeners,
-  Design,
-} from '@aidomx/core'
+import { createVirtual, type RuleComponent } from '@aidomx/core'
 import { useEffect, useRef, useState, JSX, ReactNode } from 'react'
 import { SkeletonUI } from './Skeleton'
+import { NotFound } from './NotFound'
+import { DesignProps, GhostWrapperProps } from '@/types'
 
-type GhostProps = {
-  name: string // hanya untuk id/wrapper
-  rules: Rules
-  scope?: Record<string, RuleComponent | RuleComponent[]>
-}
-
-export const GhostWrapper = ({ name, rules, scope }: GhostProps) => {
+export const GhostWrapper = ({ name, rules, scope }: GhostWrapperProps) => {
   const [mounted, setMounted] = useState(false)
   const vrRef = useRef(createVirtual(rules))
   const initialized = useRef(false)
@@ -52,14 +42,7 @@ export const GhostWrapper = ({ name, rules, scope }: GhostProps) => {
 
   const allGhosts = vrRef.current.pullGhost()
 
-  if (!Object.keys(allGhosts).length) {
-    return (
-      <div id={name} className="text-center text-gray-400 py-10">
-        <h2 className="text-lg font-semibold">No components found</h2>
-        <p>Please check your entries or scope configuration.</p>
-      </div>
-    )
-  }
+  if (!Object.keys(allGhosts).length) return <NotFound name={name} />
 
   const contents = Object.values(allGhosts)
 
@@ -83,7 +66,7 @@ const renderComponent = (item: RuleComponent, key?: React.Key): ReactNode => {
       <CreateDesign
         key={`${key}-data-${i}`}
         design={item.design || { type: 'div' }}
-        listeners={item?.listeners as Listeners}
+        listeners={item?.listeners}
       >
         {JSON.stringify(dataItem)}
         {children}
@@ -93,11 +76,7 @@ const renderComponent = (item: RuleComponent, key?: React.Key): ReactNode => {
 
   if (item?.design) {
     return (
-      <CreateDesign
-        key={key}
-        design={item.design}
-        listeners={item.listeners as Listeners}
-      >
+      <CreateDesign key={key} design={item.design} listeners={item.listeners}>
         {item.design.content}
         {children}
       </CreateDesign>
@@ -105,13 +84,6 @@ const renderComponent = (item: RuleComponent, key?: React.Key): ReactNode => {
   }
 
   return null
-}
-
-// Komponen desain dasar
-type DesignProps = {
-  design: Design
-  children: ReactNode
-  listeners: Listeners
 }
 
 const CreateDesign = ({ design, children, listeners }: DesignProps) => {
