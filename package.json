@@ -19,8 +19,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsup",
-    "prepublishOnly": "npm run build",
-    "release": "semantic-release"
+    "prepublishOnly": "npm run build"
   },
   "homepage": "https://github.com/aidomx/react#readme",
   "bugs": {
@@ -38,15 +37,9 @@
     "@aidomx/core": "^0.1.1"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/commit-analyzer": "^13.0.1",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^11.0.2",
-    "@semantic-release/npm": "^12.0.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "semantic-release": "^24.2.3",
     "tsup": "^8.4.0",
     "typescript": "^5"
   },
