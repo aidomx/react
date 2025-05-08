@@ -1,1 +1,1 @@
-export * from './GhostWrapper'
+export * from './Wrapper'

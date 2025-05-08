@@ -1,20 +1,16 @@
-import type {
-  Design,
-  Listeners,
-  RuleComponent,
-  Rules,
-  Skeleton,
-} from '@aidomx/core'
+import type { Design, RuleEvent, Rules, Skeleton } from '@aidomx/core'
 import { ReactNode } from 'react'
 
 export type AidomxProps = {
   name: string
-  scope: Record<string, RuleComponent | RuleComponent[]>
+  scope?: string[]
 }
 
 export type GhostWrapperProps = {
-  rules: Rules
+  partial: Rules
 } & AidomxProps
+
+export interface WrapperProps extends AidomxProps {}
 
 export type SkeletonProps = {
   skeleton: Skeleton
@@ -22,7 +18,10 @@ export type SkeletonProps = {
 
 // Komponen desain dasar
 export type DesignProps = {
+  id?: string
   design: Design
   children: ReactNode
-  listeners: Listeners
+  listeners?: {
+    [event: string]: (event: RuleEvent) => void
+  }
 }
