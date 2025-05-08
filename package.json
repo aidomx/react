@@ -35,7 +35,7 @@
     "ui"
   ],
   "dependencies": {
-    "@aidomx/core": "^0.1.0"
+    "@aidomx/core": "^0.1.1"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
@@ -48,6 +48,7 @@
     "typescript": "^5"
   },
   "peerDependencies": {
+    "@aiomx/core": "file:../core",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   }
