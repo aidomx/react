@@ -48,7 +48,6 @@
     "typescript": "^5"
   },
   "peerDependencies": {
-    "@aiomx/core": "file:../core",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   }
