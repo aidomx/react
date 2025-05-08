@@ -13,6 +13,26 @@ Format:
 
 ---
 
+## [v0.1.2] - May 8, 2025
+
+### Added
+
+- Support for external event handlers.
+
+### Changed
+
+- Renamed `GhostWrapper` to `Wrapper`.
+- Improved hot reload behavior and fixed issues related to event handling.
+- Updated `README.md` with clearer usage instructions.
+
+### Removed
+
+- Discontinued the use of `semantic-release`.
+
+### Notes
+
+- Event handler support is still basic and limited in capability.
+
 ## [v0.1.1] - 3 May, 2025
 
 ### Added
